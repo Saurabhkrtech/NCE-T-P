@@ -1,0 +1,55 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles1.css" rel="stylesheet">
+  <title>Recruiter Login</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mt-5">Recruiter Login</h1>
+    <form id="loginForm" class="mt-5">
+      <div class="form-group">
+        <label for="name">Company Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Company name" required>
+      </div>
+      <div class="form-group">
+        <label for="branch">E-Mail ID</label>
+        <input type="text" class="form-control" id="branch" name="branch" placeholder="Enter your E-Mail ID" required>
+      </div>
+      <div class="form-group">
+        <label for="registrationNumber">Registration Number</label>
+        <input type="text" class="form-control" id="registrationNumber" name="registrationNumber" placeholder="Enter your registration number" required>
+      </div>
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" class="form-control" id="collegeRollNumber" name="Password" placeholder="Enter your Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+    
+      const formData = {
+        name: document.getElementById('name').value,
+        branch: document.getElementById('branch').value,
+        registrationNumber: document.getElementById('registrationNumber').value,
+        collegeRollNumber: document.getElementById('collegeRollNumber').value
+      };
+  
+    
+      console.log(formData);
+  
+    
+      document.getElementById('loginForm').reset();
+    });
+  </script></body>
+</html>
