@@ -57,6 +57,26 @@
     .download-section h2 {
       margin-bottom: 30px;
     }
+
+    /* Night mode styles */
+    body.night-mode {
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Mode toggle button */
+    .mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .mode-toggle button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+    }
   </style>
 </head>
 <body>
@@ -95,6 +115,13 @@
     </div>
   </div>
 </nav>
+
+<!-- Day/Night Mode Toggle -->
+<div class="mode-toggle">
+  <button id="mode-toggle-btn" class="btn btn-outline-light">
+    <i id="mode-icon" class="fas fa-sun"></i> <!-- Initial icon: sun -->
+  </button>
+</div>
 
 <!-- About College section -->
 <section id="about" class="py-5">
@@ -168,9 +195,24 @@
     <p>&copy; 2024 T&P Cell,NCE Chandi. All rights reserved.</p>
   </div>
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Toggle between day and night mode
+  const modeToggleBtn = document.getElementById('mode-toggle-btn');
+  const modeIcon = document.getElementById('mode-icon');
+  const body = document.body;
+
+  modeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('night-mode');
+    const isNightMode = body.classList.contains('night-mode');
+    modeIcon.className = isNightMode ? 'fas fa-moon' : 'fas fa-sun';
+    modeToggleBtn.setAttribute('aria-label', isNightMode ? 'Switch to Day Mode' : 'Switch to Night Mode');
+  });
+</script>
 
 </body>
 </html>
