@@ -4,52 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link href="styles1.css" rel="stylesheet">
-  <title>Student Login</title>
+  <title>Students Login</title>
+  <style>
+    body {
+      background: url('images/Screenshot\ 2024-07-11\ 085558.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-group label {
+      color: #555;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      background: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="text-center mt-5">Student Login</h1>
-    <form id="loginForm" class="mt-5">
+    <h1 class="text-center mt-3">Students Login</h1>
+    <form id="loginForm" class="mt-4">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
       </div>
       <div class="form-group">
-        <label for="branch">Branch</label>
-        <input type="text" class="form-control" id="branch" name="branch" placeholder="Enter your branch" required>
+        <label for="email">E-Mail ID</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-Mail ID" required>
       </div>
       <div class="form-group">
         <label for="registrationNumber">Registration Number</label>
         <input type="text" class="form-control" id="registrationNumber" name="registrationNumber" placeholder="Enter your registration number" required>
       </div>
       <div class="form-group">
-        <label for="collegeRollNumber">College Roll Number</label>
-        <input type="text" class="form-control" id="collegeRollNumber" name="collegeRollNumber" placeholder="Enter your college roll number" required>
+        <label for="password">Roll Number</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Roll No." required>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
   <script>
     document.getElementById('loginForm').addEventListener('submit', function(event) {
       event.preventDefault();
-    
+      
       const formData = {
         name: document.getElementById('name').value,
-        branch: document.getElementById('branch').value,
+        email: document.getElementById('email').value,
         registrationNumber: document.getElementById('registrationNumber').value,
-        collegeRollNumber: document.getElementById('collegeRollNumber').value
+        password: document.getElementById('Roll no').value
       };
-  
-    
+
       console.log(formData);
-  
-    
+
       document.getElementById('loginForm').reset();
     });
-  </script></body>
+  </script>
+</body>
 </html>
